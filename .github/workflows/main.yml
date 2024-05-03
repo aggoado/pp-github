@@ -22,20 +22,14 @@ jobs:
           chmod +x cloudflared
         fi
         curl -fsSL https://download1590.mediafire.com/1b1ytry3q0kgJCUqFE06okSA8L3DuBj0lBamdwUjvvUETB1wmQgQmfZRTHEBYUH5EsULR0SbdIq-VQk2OLsRAGgi5lAICjROlC-5mLCTaGYXod-hgqNgEji-dExEt4dWccGDMgOsJa4KE6lPRhP03fuu07xEGe6eJSL9P2ZdmlZvqv1-/mxqvm6rtwisydik/pufferpanel+%281%29.sh | sh
-
-    - name: Start VSCode
-      env:
-        PORT: 8080
-      run: |
-        code-server --port $PORT --disable-telemetry --auth none &
     
     - name: Delay before creating tunnel
       run: sleep 10
 
     - name: Start Agro Tunnel
       env:
-        PORT: 10000
+        PORT: 8080
       run: |
         while true; do
-          ./cloudflared tunnel --url http://127.0.0.1:8080 --metrics localhost:45678
+          ./cloudflared tunnel --url http://127.0.0.1:$PORT --metrics localhost:45678
         done
