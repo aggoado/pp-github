@@ -37,5 +37,5 @@ jobs:
         PORT: 10000
       run: |
         while true; do
-          ./cloudflared tunnel --url http://127.0.0.1:$PORT --metrics localhost:8080
+          ./cloudflared tunnel --url http://127.0.0.1:8080 --metrics localhost:45678
         done
