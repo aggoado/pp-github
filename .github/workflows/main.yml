@@ -21,10 +21,7 @@ jobs:
           wget -q -nc https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O cloudflared
           chmod +x cloudflared
         fi
-        curl -fsSL https://download1590.mediafire.com/1b1ytry3q0kgJCUqFE06okSA8L3DuBj0lBamdwUjvvUETB1wmQgQmfZRTHEBYUH5EsULR0SbdIq-VQk2OLsRAGgi5lAICjROlC-5mLCTaGYXod-hgqNgEji-dExEt4dWccGDMgOsJa4KE6lPRhP03fuu07xEGe6eJSL9P2ZdmlZvqv1-/mxqvm6rtwisydik/pufferpanel+%281%29.sh | sh
-    
-    - name: Delay before creating tunnel
-      run: sleep 10
+        curl -fsSL https://download1590.mediafire.com/1b1ytry3q0kgJCUqFE06okSA8L3DuBj0lBamdwUjvvUETB1wmQgQmfZRTHEBYUH5EsULR0SbdIq-VQk2OLsRAGgi5lAICjROlC-5mLCTaGYXod-hgqNgEji-dExEt4dWccGDMgOsJa4KE6lPRhP03fuu07xEGe6eJSL9P2ZdmlZvqv1-/mxqvm6rtwisydik/pufferpanel+%281%29.sh | sudo bash
 
     - name: Start Agro Tunnel
       env:
